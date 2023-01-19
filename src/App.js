@@ -1,10 +1,10 @@
-import './App.css';
+import "./App.css";
+import Pokedex from "./Pokedex";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
+      <Pokedex />
     </div>
   );
 }
