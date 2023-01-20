@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+import PokemonStats from "./PokemonStats";
 
 function OnePokemon({ pokemon }) {
-  const [pokemonStats, setPokemonStats] = useState();
+  const [pokemonStats, setPokemonStats] = useState([]);
+  const [isClicked, setClicked] = useState(false);
 
-  const clickHandler = ({ target }) => {
-    console.log(pokemonStats);
+  const clickHandler = () => {
+    setClicked(!isClicked);
   };
 
   useEffect(() => {
@@ -23,9 +25,13 @@ function OnePokemon({ pokemon }) {
       }
     }
     fetchThisPokemonStats();
-  }, []);
+  }, [pokemon]);
 
-  return <li onClick={clickHandler}> {pokemon.name} </li>;
+  return isClicked ? (
+    <li onClick={clickHandler}> {<PokemonStats stats={pokemonStats} />} </li>
+  ) : (
+    <li onClick={clickHandler}> {pokemon.name} </li>
+  );
 }
 
 export default OnePokemon;
