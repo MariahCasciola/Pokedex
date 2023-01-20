@@ -30,7 +30,10 @@ function OnePokemon({ pokemon }) {
   }, [pokemon]);
 
   return isClicked ? (
-    <div onClick={clickHandler}>{<PokemonStats stats={pokemonStats} />}</div>
+    <div onClick={clickHandler}>
+      {<PokemonStats stats={pokemonStats} />}
+      <img src={pokemonSprite} alt={pokemon.name} />
+    </div>
   ) : (
     <div onClick={clickHandler}>
       <p> {pokemon.name}</p>
