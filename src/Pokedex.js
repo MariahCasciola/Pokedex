@@ -9,7 +9,7 @@ function Pokedex() {
   useEffect(() => {
     const abortController = new AbortController();
 
-    async function fetchFirstTenPokemon() {
+    async function apiCall() {
       try {
         const response = await fetch(
           `https://pokeapi.co/api/v2/pokemon?limit=10&offset=0`,
@@ -23,16 +23,16 @@ function Pokedex() {
         throw console.log("error");
       }
     }
-    fetchFirstTenPokemon();
+    apiCall();
   }, []);
 
   return (
-    <ul>
+    <div>
       {pokemonList.map((pokemon, index) => {
         // console.log(pokemon)
         return <OnePokemon key={index} pokemon={pokemon} />;
       })}
-    </ul>
+    </div>
   );
 }
 

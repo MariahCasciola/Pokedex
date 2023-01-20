@@ -3,9 +3,8 @@ import React from "react";
 function PokemonStats({ stats }) {
   return (
     <div>
-      {stats.map(({ stat, base_stat }) => {
-        console.log(stat);
-        return <p> {stat.name} : {base_stat}</p>;
+      {stats.map(({ stat, base_stat}, index) => {
+        return <p key={index} > {stat.name} : {base_stat}</p>;
       })}
     </div>
   );

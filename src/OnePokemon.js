@@ -4,6 +4,7 @@ import PokemonStats from "./PokemonStats";
 function OnePokemon({ pokemon }) {
   const [pokemonStats, setPokemonStats] = useState([]);
   const [isClicked, setClicked] = useState(false);
+  const [pokemonSprite, setPokemonSprite] = useState("");
 
   const clickHandler = () => {
     setClicked(!isClicked);
@@ -20,6 +21,7 @@ function OnePokemon({ pokemon }) {
         //IMPORTANT PART (1) ***************************************
         const pokemonInfo = await response.json();
         setPokemonStats(pokemonInfo.stats);
+        setPokemonSprite(pokemonInfo.sprites.front_default);
       } catch {
         throw console.error("error");
       }
@@ -28,9 +30,12 @@ function OnePokemon({ pokemon }) {
   }, [pokemon]);
 
   return isClicked ? (
-    <li onClick={clickHandler}> {<PokemonStats stats={pokemonStats} />} </li>
+    <div onClick={clickHandler}>{<PokemonStats stats={pokemonStats} />}</div>
   ) : (
-    <li onClick={clickHandler}> {pokemon.name} </li>
+    <div onClick={clickHandler}>
+      <p> {pokemon.name}</p>
+      <img src={pokemonSprite} alt={pokemon.name} />
+    </div>
   );
 }
 
