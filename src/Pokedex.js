@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
+import OnePokemon from "./OnePokemon";
 
 function Pokedex() {
   //IMPORTANT PART (2) ***************************************
   const [pokemon, setPokemon] = useState([]);
-
+  // console.log(pokemon)
   //keeps track of side effects like api calls
   useEffect(() => {
     const abortController = new AbortController();
@@ -17,16 +18,21 @@ function Pokedex() {
         //IMPORTANT PART (1) ***************************************
         const pokemonList = await response.json();
         setPokemon(pokemonList.results);
-        console.log(pokemonList.results);
+        // console.log(pokemonList.results);
       } catch {
         throw console.log("error");
       }
     }
-    //do I need a parameter?
     apiCall();
   }, []);
 
-  return <div></div>;
+  return (
+    <ul>
+      {pokemon.map((element, index) => {
+        return <OnePokemon key={index} element={element} />;
+      })}
+    </ul>
+  );
 }
 
 export default Pokedex;
