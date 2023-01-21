@@ -20,6 +20,7 @@ function OnePokemon({ pokemon }) {
         });
         //IMPORTANT PART (1) ***************************************
         const pokemonInfo = await response.json();
+        // console.log(pokemonInfo)
         setPokemonStats(pokemonInfo.stats);
         setPokemonSprite(pokemonInfo.sprites.front_default);
       } catch {
