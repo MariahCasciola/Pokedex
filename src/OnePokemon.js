@@ -32,13 +32,13 @@ function OnePokemon({ pokemon }) {
 
   return isClicked ? (
     <div onClick={clickHandler}>
-      {<PokemonStats stats={pokemonStats} />}
       <img src={pokemonSprite} alt={pokemon.name} />
+      {<PokemonStats stats={pokemonStats} />}
     </div>
   ) : (
     <div onClick={clickHandler}>
-      <p> {pokemon.name}</p>
       <img src={pokemonSprite} alt={pokemon.name} />
+      <p> {pokemon.name}</p>
     </div>
   );
 }
