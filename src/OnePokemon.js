@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PokemonStats from "./PokemonStats";
+import "./styling/OnePokemon.css"
 
 function OnePokemon({ pokemon }) {
   const [pokemonStats, setPokemonStats] = useState([]);
@@ -18,9 +19,7 @@ function OnePokemon({ pokemon }) {
         const response = await fetch(pokemon.url, {
           signal: abortController.signal,
         });
-        //IMPORTANT PART (1) ***************************************
         const pokemonInfo = await response.json();
-        // console.log(pokemonInfo)
         setPokemonStats(pokemonInfo.stats);
         setPokemonSprite(pokemonInfo.sprites.front_default);
       } catch {

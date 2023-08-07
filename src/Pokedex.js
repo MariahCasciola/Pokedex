@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import OnePokemon from "./OnePokemon";
+import "./styling/OnePokemon.css"
 
 function Pokedex() {
-  //IMPORTANT PART (2) ***************************************
   const [pokemonList, setPokemonList] = useState([]);
-  // console.log(pokemon)
-  //keeps track of side effects like api calls
+  
   useEffect(() => {
     const abortController = new AbortController();
 
@@ -15,7 +14,6 @@ function Pokedex() {
           `https://pokeapi.co/api/v2/pokemon?limit=100&offset=0`,
           { signal: abortController.signal }
         );
-        //IMPORTANT PART (1) ***************************************
         const pokemonList = await response.json();
         setPokemonList(pokemonList.results);
         // console.log(pokemonList.results);
