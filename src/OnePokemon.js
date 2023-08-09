@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PokemonStats from "./PokemonStats";
-import "./styling/OnePokemon.css"
+import "./styling/OnePokemon.scss";
 
 function OnePokemon({ pokemon }) {
   const [pokemonStats, setPokemonStats] = useState([]);
@@ -35,7 +35,7 @@ function OnePokemon({ pokemon }) {
       {<PokemonStats stats={pokemonStats} />}
     </div>
   ) : (
-    <div onClick={clickHandler}>
+    <div onClick={clickHandler} className="pokemon-card">
       <img src={pokemonSprite} alt={pokemon.name} />
       <p> {pokemon.name}</p>
     </div>

@@ -1,0 +1,13 @@
+$myFont: Monospace;
+$paleturquoise: #AFEEEE;
+
+p{
+    font-family: $myFont;
+    margin: 0;
+}
+
+.pokemon-card {
+    border-style: solid;
+    border-color: $paleturquoise;
+    padding: 5px;
+}

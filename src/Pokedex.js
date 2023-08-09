@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import OnePokemon from "./OnePokemon";
-import "./styling/OnePokemon.css"
 
 function Pokedex() {
   const [pokemonList, setPokemonList] = useState([]);
-  
+
   useEffect(() => {
     const abortController = new AbortController();
 
@@ -16,7 +15,6 @@ function Pokedex() {
         );
         const pokemonList = await response.json();
         setPokemonList(pokemonList.results);
-        // console.log(pokemonList.results);
       } catch {
         throw console.log("error");
       }
@@ -27,7 +25,6 @@ function Pokedex() {
   return (
     <div>
       {pokemonList.map((pokemon, index) => {
-        // console.log(pokemon)
         return <OnePokemon key={index} pokemon={pokemon} />;
       })}
     </div>
