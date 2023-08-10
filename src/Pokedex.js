@@ -23,7 +23,7 @@ function Pokedex() {
   }, []);
 
   return (
-    <div>
+    <div className="cards-container">
       {pokemonList.map((pokemon, index) => {
         return <OnePokemon key={index} pokemon={pokemon} />;
       })}

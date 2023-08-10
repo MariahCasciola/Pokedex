@@ -1,13 +1,50 @@
 $myFont: Monospace;
-$paleturquoise: #AFEEEE;
+$gunmetal: #2D3142;
+$french-gray: #ADACB5;
+$platinum: #D8D5DB;
+$uranian-blue: #B0D7FF;
+$ten-pixels : 10px;
 
 p{
+    display: flex;
     font-family: $myFont;
+    font-size: calc($ten-pixels + 2vmin);;
     margin: 0;
 }
 
-.pokemon-card {
-    border-style: solid;
-    border-color: $paleturquoise;
-    padding: 5px;
+.cards-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.pokemon-card {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-color: $gunmetal;
+    margin: 30px;
+    box-shadow: $ten-pixels $ten-pixels $ten-pixels $french-gray;
+    border-radius: $ten-pixels;
+}
+
+.pokemon-stat-container{
+    margin: $ten-pixels;
+}
+
+.pokemon-stat{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sprite{
+    border-color: $uranian-blue;
+    border-style: solid;
+    margin: $ten-pixels;
+    border-radius: $ten-pixels;
+}
+

@@ -4,12 +4,7 @@ import "./styling/OnePokemon.scss";
 
 function OnePokemon({ pokemon }) {
   const [pokemonStats, setPokemonStats] = useState([]);
-  const [isClicked, setClicked] = useState(false);
   const [pokemonSprite, setPokemonSprite] = useState("");
-
-  const clickHandler = () => {
-    setClicked(!isClicked);
-  };
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -29,15 +24,13 @@ function OnePokemon({ pokemon }) {
     fetchThisPokemonStats();
   }, [pokemon]);
 
-  return isClicked ? (
-    <div onClick={clickHandler}>
-      <img src={pokemonSprite} alt={pokemon.name} />
-      {<PokemonStats stats={pokemonStats} />}
-    </div>
-  ) : (
-    <div onClick={clickHandler} className="pokemon-card">
-      <img src={pokemonSprite} alt={pokemon.name} />
+  return (
+    <div className="pokemon-card">
+      <img src={pokemonSprite} alt={pokemon.name} className="sprite" />
       <p> {pokemon.name}</p>
+      <div className="pokemon-stat-container">
+        <PokemonStats stats={pokemonStats} />
+      </div>
     </div>
   );
 }

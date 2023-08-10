@@ -1,9 +1,11 @@
 import "./styling/App.css";
 import Pokedex from "./Pokedex";
+import Headline from "./Headline";
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <Headline/>
       <Pokedex/>
     </div>
   );
