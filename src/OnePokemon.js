@@ -27,7 +27,7 @@ function OnePokemon({ pokemon }) {
   return (
     <div className="pokemon-card">
       <img src={pokemonSprite} alt={pokemon.name} className="sprite" />
-      <p> {pokemon.name}</p>
+      <p className="pokemon-name"> {pokemon.name}</p>
       <div className="pokemon-stat-container">
         <PokemonStats stats={pokemonStats} />
       </div>
