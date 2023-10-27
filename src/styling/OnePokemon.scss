@@ -3,7 +3,26 @@ $gunmetal: #2D3142;
 $french-gray: #ADACB5;
 $platinum: #D8D5DB;
 $uranian-blue: #B0D7FF;
+
+// lucario colors
+$lucario-grey: #2D3142;
+$lucario-blue: #4A9CEF;
+$lucario-yellow: #E6E69C;
+$lucario-silver: #C0C0C0;
+$lucario-red: #de4242;
+
+
 $ten-pixels : 10px;
+
+body{
+    background-color: $lucario-grey
+}
+
+.center{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
 
 p{
     display: flex;
@@ -19,16 +38,21 @@ p{
     align-items: center;
 }
 
+// start making this into a simplified pokedex
 .pokemon-card {
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-style: solid;
-    border-color: $gunmetal;
+    border-color: $lucario-blue;
     margin: 30px;
-    box-shadow: $ten-pixels $ten-pixels $ten-pixels $french-gray;
     border-radius: $ten-pixels;
+    // outline: 1px solid red;
+    // position: absolute;
+    // width:20px;
+    // height: 20px;
+    // box-shadow: 0px 0px 0 darkred;
 }
 
 .pokemon-stat-container{
@@ -40,11 +64,12 @@ p{
     justify-content: center;
     align-items: center;
     font-size: 20px;
+    color: $lucario-red;
 }
 
 .sprite{
-    border-color: $uranian-blue;
-    border-style: solid;
+    // border-color: $lucario-yellow;
+    // border-style: solid;
     margin: $ten-pixels;
     border-radius: $ten-pixels;
 }
@@ -52,5 +77,7 @@ p{
 .pokemon-name {
     font-weight: bold;
     font-size: 25px;
+    color: $lucario-yellow;
+    margin: $ten-pixels;
 }
 

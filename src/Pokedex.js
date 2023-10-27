@@ -1,31 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import "./styling/Pokedex.css";
 import OnePokemon from "./OnePokemon";
 
-function Pokedex({number}) {
-  const [pokemonList, setPokemonList] = useState([]);
-
-  useEffect(() => {
-    const abortController = new AbortController();
-
-    async function apiCall() {
-      try {
-        const response = await fetch(
-          `https://pokeapi.co/api/v2/pokemon?limit=${number}&offset=0`,
-          { signal: abortController.signal }
-        );
-        const pokemonList = await response.json();
-        setPokemonList(pokemonList.results);
-      } catch {
-        throw console.log("error");
-      }
-    }
-    apiCall();
-  }, [number]);
-
+function Pokedex({ searchResults}) {
   return (
     <div className="cards-container">
-      {pokemonList.map((pokemon, index) => {
-        return <OnePokemon key={index} pokemon={pokemon} />;
+      {searchResults.map((pokemon, index) => {
+        return (
+          <OnePokemon
+            pokemon={pokemon}
+            searchResults={searchResults}
+          />
+        );
       })}
     </div>
   );

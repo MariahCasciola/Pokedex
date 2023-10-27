@@ -1,0 +1,31 @@
+.text-color {
+  color: #e6e69c;
+  font-family: monospace;
+  font-size: calc(5px + 2vmin);
+  padding: 10px;
+}
+
+.display-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.label-input {
+  display: flex;
+  justify-content:flex-end;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.button {
+  background-color: red;
+  border-radius: 10px;
+  color: white;
+}

@@ -1,35 +1,42 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import PokemonStats from "./PokemonStats";
 import "./styling/OnePokemon.scss";
 
 function OnePokemon({ pokemon }) {
-  const [pokemonStats, setPokemonStats] = useState([]);
-  const [pokemonSprite, setPokemonSprite] = useState("");
+  const [stats, setStats] = useState([]);
+  const [sprite, setSprite] = useState("");
 
-  useEffect(() => {
-    const abortController = new AbortController();
+  //searchResults is an array full of matching pokemon and their urls
+  //loop through, compare element.name to values??
 
-    async function fetchThisPokemonStats() {
+  const fetchThisPokemon = () => {
+    // make the api call to list pokemon
+    async function apiCall() {
+      const abortController = new AbortController();
       try {
-        const response = await fetch(pokemon.url, {
+        const response = await fetch(`${pokemon.url}`, {
           signal: abortController.signal,
         });
-        const pokemonInfo = await response.json();
-        setPokemonStats(pokemonInfo.stats);
-        setPokemonSprite(pokemonInfo.sprites.front_default);
+        const pokemonObject = await response.json();
+        setSprite(pokemonObject.sprites.front_default);
+        setStats(pokemonObject.stats);
       } catch {
-        throw console.error("error");
+        throw console.log("error");
       }
     }
-    fetchThisPokemonStats();
+    apiCall();
+  };
+
+  useEffect(() => {
+    fetchThisPokemon();
   }, [pokemon]);
 
   return (
     <div className="pokemon-card">
-      <img src={pokemonSprite} alt={pokemon.name} className="sprite" />
-      <p className="pokemon-name"> {pokemon.name}</p>
+      <img src={sprite} alt={`${pokemon.name} image`} className="sprite" />
+      <p className="pokemon-name">{pokemon.name}</p>
       <div className="pokemon-stat-container">
-        <PokemonStats stats={pokemonStats} />
+        <PokemonStats stats={stats} />
       </div>
     </div>
   );

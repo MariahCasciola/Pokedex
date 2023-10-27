@@ -1,28 +1,20 @@
 import "./styling/App.css";
+import React, { useState } from "react";
+import Header from "./header/Header";
+import SearchForm from "./search/SearchForm";
 import Pokedex from "./Pokedex";
-import Headline from "./Headline";
-import NumberForm from "./NumberForm";
-import { useState } from "react";
 
 function App() {
-  const [number, setNumber] = useState(1);
-
-  //handle number change
-  const changeNumberHandler = (event) => {
-    setNumber(event.target.value);
-  };
-
-  // submit the
-    const submitHandler = (event) => {
-      event.preventDefault();
-      setNumber(number)
-    };
+  // create a use state for the pokemonlist
+  const [results, setResults] = useState([]);
 
   return (
     <div>
-      <Headline />
-      <NumberForm number={number} changeNumberHandler={changeNumberHandler} submitHandler={submitHandler} />
-      <Pokedex number={number}/>
+      <Header />
+      <SearchForm setResults={setResults} />
+      <Pokedex
+        searchResults={results}
+      />
     </div>
   );
 }
