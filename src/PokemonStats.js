@@ -1,4 +1,5 @@
 import React from "react";
+import "./styling/global.css"
 
 function PokemonStats({ stats }) {
   return (

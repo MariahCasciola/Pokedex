@@ -1,5 +1,6 @@
 import React from "react";
 import "./styling/Form.css";
+import "./styling/global.css";
 
 function NumberForm({ number, changeNumberHandler, submitHandler }) {
   return (

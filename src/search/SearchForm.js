@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "../styling/Form.css";
+import "../styling/global.css"
 
-function SearchForm({ setResults}) {
+function SearchForm({ setResults }) {
   const [name, setName] = useState("");
 
-  // returns an array of objects with name matches and partial name matches
+  // returns an array of objects with name matches and partial name matches results/searchResults and setResults is drilled from
   const listFetcher = (value) => {
     const abortController = new AbortController();
     fetch(`https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0`, {
@@ -19,6 +20,7 @@ function SearchForm({ setResults}) {
             pokemon.name.toLowerCase().includes(value)
           );
         });
+        // console.log("searchResults", searchResults);
         setResults(searchResults);
       })
     );
@@ -28,22 +30,27 @@ function SearchForm({ setResults}) {
   const changeHandler = (event) => {
     const { value } = event.target;
     setName(value);
-    listFetcher(value.toLowerCase());
+    // replace.() chain replaces all spaces with - to account for pokemon names such as gengar-mega
+    listFetcher(value.toLowerCase().replace(/\s+/g, "-"));
+  };
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    setName("")
   };
 
   return (
     <>
-      <form className="display-center">
+      <form onSubmit={submitHandler} className="display-center">
         <label htmlFor="search"></label>
         <input
           id="search"
           name="search"
           onChange={changeHandler}
           value={name}
+          placeholder="Search for a Pokemon"
         ></input>
-        {/* <button className="button" onClick={submitHandler}>
-          Search
-        </button> */}
+        <button type="submit" className="button">Search</button>
       </form>
     </>
   );

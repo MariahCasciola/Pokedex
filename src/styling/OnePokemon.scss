@@ -3,19 +3,10 @@ $gunmetal: #2D3142;
 $french-gray: #ADACB5;
 $platinum: #D8D5DB;
 $uranian-blue: #B0D7FF;
-
-// lucario colors
-$lucario-grey: #2D3142;
-$lucario-blue: #4A9CEF;
-$lucario-yellow: #E6E69C;
-$lucario-silver: #C0C0C0;
-$lucario-red: #de4242;
-
-
 $ten-pixels : 10px;
 
 body{
-    background-color: $lucario-grey
+    background-color: var(--primary-one)
 }
 
 .center{
@@ -45,14 +36,18 @@ p{
     justify-content: center;
     align-items: center;
     border-style: solid;
-    border-color: $lucario-blue;
+    border-color: var(--secondary-one);
+    background-color: var(--secondary-one);
     margin: 30px;
     border-radius: $ten-pixels;
-    // outline: 1px solid red;
-    // position: absolute;
-    // width:20px;
-    // height: 20px;
-    // box-shadow: 0px 0px 0 darkred;
+    // make words wrap so they do not stretch about the 
+    inline-size: 150px;
+    overflow-wrap: break-word;
+}
+
+.pokemon-card:hover{
+    background-color: var(--accent-one);
+    border-color: var(--accent-one);
 }
 
 .pokemon-stat-container{
@@ -64,12 +59,10 @@ p{
     justify-content: center;
     align-items: center;
     font-size: 20px;
-    color: $lucario-red;
+    color: var(--accent-two);
 }
 
 .sprite{
-    // border-color: $lucario-yellow;
-    // border-style: solid;
     margin: $ten-pixels;
     border-radius: $ten-pixels;
 }
@@ -77,7 +70,6 @@ p{
 .pokemon-name {
     font-weight: bold;
     font-size: 25px;
-    color: $lucario-yellow;
+    color: var(--secondary-two);
     margin: $ten-pixels;
 }
-

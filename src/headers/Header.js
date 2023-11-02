@@ -1,10 +1,11 @@
 import React from "react";
 import "../styling/Header.css";
+import "../styling/global.css";
 
 function Header() {
   return (
     <header>
-      <div className="title">Gotta Catch 'em all</div>
+      <div className="title">Pick your favorite Pokemon</div>
     </header>
   );
 }

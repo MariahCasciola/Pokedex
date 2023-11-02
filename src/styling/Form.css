@@ -1,5 +1,5 @@
 .text-color {
-  color: #e6e69c;
+  color: var(--secondary-two);
   font-family: monospace;
   font-size: calc(5px + 2vmin);
   padding: 10px;
@@ -13,7 +13,7 @@
 
 .label-input {
   display: flex;
-  justify-content:flex-end;
+  justify-content: flex-end;
 }
 
 .column {
@@ -25,7 +25,7 @@
 }
 
 .button {
-  background-color: red;
+  background-color: var(--accent-two);
   border-radius: 10px;
   color: white;
 }
