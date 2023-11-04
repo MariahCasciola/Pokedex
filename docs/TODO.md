@@ -2,12 +2,11 @@
 
 ADD A .CATCH TO LIST FETCHER
 
-
 ## Logic for creating Dynamic Color Pallete
 
 + default everything to black/or lucario colors
 + copy those 5 colors, make it programatic
-+ text color, accent color, primary color 1, primary color 2 (like Bootstrap)
++ text color, accent color, primary color 1, primary color 2
 + play around with changing the colors
 + THEN make a color picker
 
@@ -48,22 +47,16 @@ ADD A .CATCH TO LIST FETCHER
 
 + Design a pokedex to show case the pokemon you find on the search engine
 
-+ When the user clicks a search result. Color picker analyzes the sprite, makes web page colored after a few of those colors
-
 + organize css files to match their component names (separate sass and css inside styling folder)
 
-<!-- // default everything to black
-// copy those 5 colors, make it programatic
-//text color, accsent color, primary color 1, primary color 2 (like Bootstrap)
-// play around with changing the colors
-// THEN import a color picker to analyze the sprites -->
++ add setTimeout(()=>) function so that no so many api calls are made during a search
 
 ## DONE
 
++ When the user clicks a search result, confirms, clicks and then confirms again a color picker analyzes the sprite, makes web page colored after the pallete of the sprite(the implimentation works, but it still needs to work when the pokemon is clicked and confirmed once, not twice).
 + Installed extract-colors package
 + Created a global css file and imported to every component.
 + Starting screen "Pick your favorite pokemon", user types name in the form and the api calls the sprite based on the name.
-+ Create a search button to clear the input field and prevent default.
 + Add a search button that clears the field upon the submission, and prevent the default behavior of submission form.
 + Render number of results
 + Impliment a search bar by name (acount for how users would write shiny names, example, a space after pickachu)

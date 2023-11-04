@@ -10,7 +10,7 @@ function Pokedex({ searchResults }) {
         return (
           <OnePokemon
             pokemon={pokemon}
-            index={index}
+            key={index}
             searchResults={searchResults}
           />
         );

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styling/Form.css";
-import "../styling/global.css"
+import "../styling/global.css";
 
 function SearchForm({ setResults }) {
   const [name, setName] = useState("");
@@ -10,20 +10,21 @@ function SearchForm({ setResults }) {
     const abortController = new AbortController();
     fetch(`https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0`, {
       signal: abortController.signal,
-    }).then((response) =>
-      response.json().then((json) => {
-        const searchResults = json.results.filter((pokemon) => {
-          return (
-            value &&
-            pokemon &&
-            pokemon.name &&
-            pokemon.name.toLowerCase().includes(value)
-          );
-        });
-        // console.log("searchResults", searchResults);
-        setResults(searchResults);
-      })
-    );
+    })
+      .then((response) =>
+        response.json().then((json) => {
+          const searchResults = json.results.filter((pokemon) => {
+            return (
+              value &&
+              pokemon &&
+              pokemon.name &&
+              pokemon.name.toLowerCase().includes(value)
+            );
+          });
+          setResults(searchResults);
+        })
+      )
+      .catch(console.err);
   };
 
   // keeps track of any change in the form
@@ -36,7 +37,7 @@ function SearchForm({ setResults }) {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    setName("")
+    setName("");
   };
 
   return (
@@ -50,7 +51,9 @@ function SearchForm({ setResults }) {
           value={name}
           placeholder="Search for a Pokemon"
         ></input>
-        <button type="submit" className="button">Search</button>
+        <button type="submit" className="button">
+          Search
+        </button>
       </form>
     </>
   );

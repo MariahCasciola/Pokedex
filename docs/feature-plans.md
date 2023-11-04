@@ -3,15 +3,19 @@
 ## User story 1
 
 + Create a search feature that allows the user to find a pokemon by name.
-  + A list of the names and sprites of matching pokemon will appear, styled with responsive grid OR styled with a carousel inside of a css pokedex
+  + A list of the names and sprites of matching pokemon will appear, styled with responsive grid.
 
 + Header Reads: "Pick your favorite Pokemon".
 
-+ Hover over OnePokemon.js
++ Hover over a pokemon card, the color changes.
 
-+ Create tests for User Story 1
++ When a pokemon card is clicked, a confirm window pops up, asks user if they want to change the color pallete of the page.
+
++ Your pallete is now a 'insert pokemon name' themed page.
+
++ Create tests for User Story 1.
 
 
 ## User Story 2
 
-+ Add found Pokemon to a pokedex, that you can scroll throught
++ Add found Pokemon to a pokedex, that you can scroll through like a carosel.
