@@ -1,7 +1,5 @@
 # TODO
 
-ADD A .CATCH TO LIST FETCHER
-
 ## Logic for creating Dynamic Color Pallete
 
 + default everything to black/or lucario colors
@@ -51,9 +49,12 @@ ADD A .CATCH TO LIST FETCHER
 
 + add setTimeout(()=>) function so that no so many api calls are made during a search
 
++ MAKE SURE DEFAULT PALLETE WORKS IN ORDER TO HANDLE UNDEFINED ELEMENT.STYLE VALUES
+
 ## DONE
 
-+ When the user clicks a search result, confirms, clicks and then confirms again a color picker analyzes the sprite, makes web page colored after the pallete of the sprite(the implimentation works, but it still needs to work when the pokemon is clicked and confirmed once, not twice).
++ ADD A .CATCH TO LIST FETCHER
++ When the user clicks a search result and confirms, a color picker analyzes the sprite, makes web page colored after the pallete of the sprite.
 + Installed extract-colors package
 + Created a global css file and imported to every component.
 + Starting screen "Pick your favorite pokemon", user types name in the form and the api calls the sprite based on the name.

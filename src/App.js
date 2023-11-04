@@ -6,6 +6,7 @@ import SearchForm from "./search/SearchForm";
 import Pokedex from "./Pokedex";
 
 function App() {
+  //results is an array full of objects with the keys 'pokemon' and 'url'
   const [results, setResults] = useState([]);
   return (
     <div>
