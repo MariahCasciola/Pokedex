@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./styling/Pokedex.css";
+import "./styling/PokemonList.css";
 import "./styling/global.css";
 import OnePokemon from "./OnePokemon";
 import { extractColors } from "extract-colors";
@@ -7,11 +7,11 @@ import { extractColors } from "extract-colors";
 function Pokedex({ searchResults }) {
   // default webpage colors
   const defaultPalette = [
-    "#2d3142",
-    "#4a9cef",
-    "#e6e69c",
-    "#c0c0c0",
-    "#de4242",
+    "#2D3047",
+    "#93B7BE",
+    "#E0CA3C",
+    "#A799B7",
+    "#048A81",
   ];
 
   const [hex, setHex] = useState(defaultPalette);
@@ -55,11 +55,10 @@ function Pokedex({ searchResults }) {
   // on click, window confirms the color pallete
   const clickHandler = async (sprite) => {
     await handleColorExtraction(sprite);
-    await window.confirm("Change the color palette of the webpage?");
   };
 
   return (
-    <div className="cards-container">
+    <div className="grid">
       {searchResults.map((pokemon, index) => {
         return (
           <OnePokemon

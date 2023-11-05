@@ -43,7 +43,6 @@ function SearchForm({ setResults }) {
   return (
     <>
       <form onSubmit={submitHandler} className="display-center">
-        <label htmlFor="search"></label>
         <input
           id="search"
           name="search"
@@ -51,6 +50,7 @@ function SearchForm({ setResults }) {
           value={name}
           placeholder="Search for a Pokemon"
         ></input>
+        <label htmlFor="search" />
         <button type="submit" className="button">
           Search
         </button>

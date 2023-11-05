@@ -27,7 +27,7 @@ function OnePokemon({ pokemon, clickHandler }) {
     fetchThisPokemon();
   }, [pokemon]);
 
-  return (
+  return !sprite ? null : (
     <div
       id="pokemon-card"
       onClick={() => clickHandler(sprite)}

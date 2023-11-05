@@ -2,11 +2,9 @@
 
 ## Logic for creating Dynamic Color Pallete
 
-+ default everything to black/or lucario colors
-+ copy those 5 colors, make it programatic
-+ text color, accent color, primary color 1, primary color 2
-+ play around with changing the colors
-+ THEN make a color picker
++ Default colors in the second parameter of setProperty to black and default to an original color pallete in global.css.
++ Name the global variables color, accent color, primary color 1, primary color 2.
++ Use a color picker to analyze sprites.
 
 ## Logic for 60%, 30%, 10%, 5 colors in pallete
 
@@ -49,10 +47,17 @@
 
 + add setTimeout(()=>) function so that no so many api calls are made during a search
 
-+ MAKE SURE DEFAULT PALLETE WORKS IN ORDER TO HANDLE UNDEFINED ELEMENT.STYLE VALUES
++ MAKE SURE DEFAULT PALLETE WORKS IN ORDER TO HANDLE UNDEFINED ELEMENT.STYLE VALUES. By changing default value to: ```const defaultPalette = {
+    one: "#2d3142",
+    two: "#4a9cef",
+    three: "#e6e69c",
+    four: "#c0c0c0",
+    five: "#de4242",
+  };```
 
 ## DONE
 
++ Only pokemon with sprites will be listed in the name search.
 + ADD A .CATCH TO LIST FETCHER
 + When the user clicks a search result and confirms, a color picker analyzes the sprite, makes web page colored after the pallete of the sprite.
 + Installed extract-colors package

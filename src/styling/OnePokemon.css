@@ -30,10 +30,11 @@ p {
   border-style: solid;
   border-color: var(--secondary-one);
   background-color: var(--secondary-one);
-  margin: 30px;
   border-radius: 10px;
+  padding: 20px;
   inline-size: 150px;
   overflow-wrap: break-word;
+  text-align: center;
 }
 
 .pokemon-card:hover {
@@ -54,7 +55,6 @@ p {
 }
 
 .sprite {
-  margin: 10px;
   border-radius: 10px;
 }
 

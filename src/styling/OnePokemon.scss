@@ -1,3 +1,4 @@
+// delete the variables that are not being
 $myFont: Monospace;
 $gunmetal: #2D3142;
 $french-gray: #ADACB5;
@@ -38,11 +39,12 @@ p{
     border-style: solid;
     border-color: var(--secondary-one);
     background-color: var(--secondary-one);
-    margin: 30px;
     border-radius: $ten-pixels;
-    // make words wrap so they do not stretch about the 
+    // make words wrap so they do not stretch the card containers
+    padding: 20px;
     inline-size: 150px;
     overflow-wrap: break-word;
+    text-align: center;
 }
 
 .pokemon-card:hover{
@@ -50,10 +52,12 @@ p{
     border-color: var(--accent-one);
 }
 
+// not being used rn
 .pokemon-stat-container{
     margin: $ten-pixels;
 }
 
+// not being used rn
 .pokemon-stat{
     display:flex;
     justify-content: center;
@@ -63,7 +67,6 @@ p{
 }
 
 .sprite{
-    margin: $ten-pixels;
     border-radius: $ten-pixels;
 }
 

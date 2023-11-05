@@ -3,7 +3,7 @@ import "./styling/global.css";
 import React, { useState } from "react";
 import Header from "./headers/Header";
 import SearchForm from "./search/SearchForm";
-import Pokedex from "./Pokedex";
+import PokemonList from "./PokemonList";
 
 function App() {
   //results is an array full of objects with the keys 'pokemon' and 'url'
@@ -13,7 +13,7 @@ function App() {
       <Header />
       <p className="title">Results: {results.length}</p>
       <SearchForm setResults={setResults} />
-      <Pokedex searchResults={results} />
+      <PokemonList searchResults={results} />
     </div>
   );
 }
