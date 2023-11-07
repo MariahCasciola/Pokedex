@@ -1,0 +1,15 @@
+// not being used atm
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    justify-items: center;
+    gap: 1rem;
+    margin-top: 30px;
+}

@@ -1,0 +1,78 @@
+// delete the variables that are not being
+$myFont: Monospace;
+$gunmetal: #2D3142;
+$french-gray: #ADACB5;
+$platinum: #D8D5DB;
+$uranian-blue: #B0D7FF;
+$ten-pixels : 10px;
+
+body{
+    background-color: var(--primary-one)
+}
+
+.center{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    display: flex;
+    font-family: $myFont;
+    font-size: calc($ten-pixels + 2vmin);;
+    margin: 0;
+}
+
+.cards-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// start making this into a simplified pokedex
+.pokemon-card {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-color: var(--secondary-one);
+    background-color: var(--secondary-one);
+    border-radius: $ten-pixels;
+    // make words wrap so they do not stretch the card containers
+    padding: 20px;
+    inline-size: 150px;
+    overflow-wrap: break-word;
+    text-align: center;
+}
+
+.pokemon-card:hover{
+    background-color: var(--accent-one);
+    border-color: var(--accent-one);
+}
+
+// not being used rn
+.pokemon-stat-container{
+    margin: $ten-pixels;
+}
+
+// not being used rn
+.pokemon-stat{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: var(--accent-two);
+}
+
+.sprite{
+    border-radius: $ten-pixels;
+}
+
+.pokemon-name {
+    font-weight: bold;
+    font-size: 25px;
+    color: var(--secondary-two);
+    margin: $ten-pixels;
+}

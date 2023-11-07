@@ -1,0 +1,8 @@
+/* default colors for webpage */
+:root {
+  --primary-one: #2d3047;
+  --secondary-one: #93b7be;
+  --secondary-two: #e0ca3c;
+  --accent-one: #a799b7;
+  --accent-two: #048a81;
+}

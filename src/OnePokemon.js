@@ -1,44 +1,40 @@
-import React, { useState, useEffect } from "react";
-import PokemonStats from "./PokemonStats";
+import { useState, useEffect } from "react";
+import "./styling/OnePokemon.scss";
+import "./styling/global.css";
 
-function OnePokemon({ pokemon }) {
-  const [pokemonStats, setPokemonStats] = useState([]);
-  const [isClicked, setClicked] = useState(false);
-  const [pokemonSprite, setPokemonSprite] = useState("");
+function OnePokemon({ pokemon, clickHandler }) {
+  const [sprite, setSprite] = useState("");
 
-  const clickHandler = () => {
-    setClicked(!isClicked);
+  //searchResults is an array full of objects with keys pokemon names and their urls
+  const fetchThisPokemon = () => {
+    //fetches sprites of pokemon
+    async function apiCall() {
+      const abortController = new AbortController();
+      try {
+        const response = await fetch(`${pokemon.url}`, {
+          signal: abortController.signal,
+        });
+        const pokemonObject = await response.json();
+        setSprite(pokemonObject.sprites.front_default);
+      } catch {
+        throw console.log("error");
+      }
+    }
+    apiCall();
   };
 
   useEffect(() => {
-    const abortController = new AbortController();
-
-    async function fetchThisPokemonStats() {
-      try {
-        const response = await fetch(pokemon.url, {
-          signal: abortController.signal,
-        });
-        //IMPORTANT PART (1) ***************************************
-        const pokemonInfo = await response.json();
-        // console.log(pokemonInfo)
-        setPokemonStats(pokemonInfo.stats);
-        setPokemonSprite(pokemonInfo.sprites.front_default);
-      } catch {
-        throw console.error("error");
-      }
-    }
-    fetchThisPokemonStats();
+    fetchThisPokemon();
   }, [pokemon]);
 
-  return isClicked ? (
-    <div onClick={clickHandler}>
-      <img src={pokemonSprite} alt={pokemon.name} />
-      {<PokemonStats stats={pokemonStats} />}
-    </div>
-  ) : (
-    <div onClick={clickHandler}>
-      <img src={pokemonSprite} alt={pokemon.name} />
-      <p> {pokemon.name}</p>
+  return !sprite ? null : (
+    <div
+      id="pokemon-card"
+      onClick={() => clickHandler(sprite)}
+      className="pokemon-card"
+    >
+      <img id="image" src={sprite} alt={pokemon.name} className="sprite" />
+      <p className="pokemon-name">{pokemon.name}</p>
     </div>
   );
 }
